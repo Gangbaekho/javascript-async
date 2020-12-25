@@ -1,13 +1,11 @@
 console.log("start");
 
-function loginUser(email, password, callback) {
-  // return을 하는 것이 아니라, 원하는 process가 끝날떄
-  // 새로운 function을 call하고 있다. 이러한 것을 callback function이라고
-  // 이해를 하면 되겠음. 즉 해결 방법을 callback에서 찾고 있다는 것임.
-
+// 지금까지는 성공 케이스만 다뤘찌만, api의 특성상
+// 실패할 경우에 대해서도 코드를 써줘야 한다는 말임.
+function loginUser(email, password, onSuccess, onFailure) {
   setTimeout(() => {
     console.log("Now we have a data");
-    callback({ userEmail: email });
+    onSuccess({ userEmail: email });
   }, 1500);
 }
 
