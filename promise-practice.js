@@ -49,3 +49,16 @@ const fb = new Promise((resolve) => {
 });
 
 Promise.all([yt, fb]).then((result) => console.log(result));
+
+async function displayUser() {
+  try {
+    const loggedUser = await loginUser("ed", 12345);
+    const videos = await getUserVideos(loggedUser.userEmail);
+    const detail = await videoDetails(videos[0]);
+    console.log(detail);
+  } catch (err) {
+    console.log("we could not get the video infos");
+  }
+}
+
+displayUser();
