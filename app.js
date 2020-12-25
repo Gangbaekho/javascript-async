@@ -17,10 +17,19 @@ function getUserVideos(email, callback) {
   }, 1000);
 }
 
+function videoDetails(video, callback) {
+  setTimeout(() => {
+    callback("title of the video");
+  }, 2000);
+}
+
 const user = loginUser("example@google.com", "test", (user) => {
   console.log(user);
   getUserVideos(user.userEmail, (videos) => {
     console.log(videos);
+    videoDetails(videos[0], (description) => {
+      console.log(description);
+    });
   });
 });
 
