@@ -17,6 +17,8 @@ setTimeout(() => {
 }, 2000);
 
 const items = [1, 2, 3, 4, 5];
+
+// forEach에 인자로 들어가는 것도 callback function이다.
 items.forEach((item) => {
   console.log(item);
 });
