@@ -8,8 +8,17 @@ console.log("start");
 // javascript의 call stack으로 setTimeout을 넘겨서
 // 실행시키게 하는 메커니즘을 가지고 있다.
 
+// setTimeout에 들어가는 function을 callback function이라고 하는데
+// 이러한 callback function은 항상 async에서만 사용하는게 아니라는 것만
+// 주의해서 기억해두도록 하자.
+
 setTimeout(() => {
   console.log("We are in the timeout");
 }, 2000);
+
+const items = [1, 2, 3, 4, 5];
+items.forEach((item) => {
+  console.log(item);
+});
 
 console.log("end");
