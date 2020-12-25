@@ -33,3 +33,19 @@ loginUser("test@gmail.com", "test-password")
   .then((detail) => console.log(detail));
 
 console.log("finish");
+
+const yt = new Promise((resolve) => {
+  setTimeout(() => {
+    console.log("getting stuff from youtube");
+    resolve({ video: [1, 2, 3, 4, 5] });
+  }, 2000);
+});
+
+const fb = new Promise((resolve) => {
+  setTimeout(() => {
+    console.log("getting stuff from facebook");
+    resolve({ user: ["name1", "name2", "name3"] });
+  }, 2000);
+});
+
+Promise.all([yt, fb]).then((result) => console.log(result));
